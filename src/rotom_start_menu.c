@@ -2245,7 +2245,7 @@ static void RotomPhone_StartMenu_DoCleanUpAndDestroyTask(u8 taskId, bool32 overw
     {
         RotomPhone_RotomRealityMenu_SaveScreen_FreeResources();
     }
-    DestroyTask(taskId);
+    if (taskId != TASK_NONE) DestroyTask(taskId);
 }
 
 static void Task_RotomPhone_StartMenu_WaitSaveGame(u8 taskId)
@@ -2256,7 +2256,7 @@ static void Task_RotomPhone_StartMenu_WaitSaveGame(u8 taskId)
         ScriptUnfreezeObjectEvents();
         UnlockPlayerFieldControls();
         SoftResetInBattlePyramid();
-        DestroyTask(taskId);
+        if (taskId != TASK_NONE) DestroyTask(taskId);
     }
     else if (!FuncIsActiveTask(SaveGameTask) && gMain.callback2 == RotomPhone_RotomRealityMenu_SaveScreen_MainCB)
     {
@@ -2392,7 +2392,7 @@ static void Task_RotomPhone_OverworldMenu_PhoneSlideClose(u8 taskId)
     {
         SetGpuReg(REG_OFFSET_BG0VOFS, 0);
         ReleaseComfyAnim(tPhoneComfyAnimId);
-        DestroyTask(taskId);
+        if (taskId != TASK_NONE) DestroyTask(taskId);
     }
 }
 
@@ -2550,7 +2550,7 @@ static void Task_RotomPhone_OverworldMenu_CloseForSafari(u8 taskId)
     else if (!FuncIsActiveTask(Task_RotomPhone_OverworldMenu_PhoneSlideClose)
         && tPhoneCloseParameterSaveSafariFade == TRUE)
     {
-        DestroyTask(taskId);
+        if (taskId != TASK_NONE) DestroyTask(taskId);
         SafariZoneRetirePrompt();
     }
 }
@@ -2563,7 +2563,7 @@ static void Task_RotomPhone_RotomRealityMenu_Open(u8 taskId)
     {
         CleanupOverworldWindowsAndTilemaps();
         RotomPhone_RotomRealityMenu_Init();
-        DestroyTask(taskId);
+        if (taskId != TASK_NONE) DestroyTask(taskId);
     }
 }
 
@@ -3019,7 +3019,7 @@ static void Task_RotomPhone_RotomRealityMenu_WaitFadeAndExitGracefullyForSave(u8
     {
         m4aSongNumStop(SE_PC_OFF);
         sRotomPhone_RotomReality = FALSE;
-        DestroyTask(taskId);
+        if (taskId != TASK_NONE) DestroyTask(taskId);
         RotomPhone_StartMenu_DoCleanUpAndChangeCallback(RotomPhone_SaveScreen_SetupCB);
     }
 }
@@ -3028,7 +3028,7 @@ static void Task_RotomPhone_RotomRealityMenu_WaitFadeForSelection(u8 taskId)
 {
     if (!gPaletteFade.active && sRotomPhoneOptions[menuSelectedRotomReality].selectedFunc)
     {
-        DestroyTask(taskId);
+        if (taskId != TASK_NONE) DestroyTask(taskId);
         sRotomPhoneOptions[menuSelectedRotomReality].selectedFunc();
     }
 }
@@ -3517,7 +3517,7 @@ static void Task_RotomPhone_SaveScreen_WaitFadeAndExit(u8 taskId)
         SetMainCallback2(CB2_ReturnToField);
         RotomPhone_RotomRealityMenu_SaveScreen_FreeResources();
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
-        DestroyTask(taskId);
+        if (taskId != TASK_NONE) DestroyTask(taskId);
     }
 }
 
