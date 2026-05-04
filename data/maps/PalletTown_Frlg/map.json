@@ -168,6 +168,13 @@
       "elevation": 0,
       "dest_map": "MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 22,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_PALLET_TOWN_FARMERS_HOUSE_FRLG",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
