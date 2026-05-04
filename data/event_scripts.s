@@ -852,6 +852,8 @@ gStdScripts_End::
 	.include "data/maps/PalletTown_PlayersHouse_2F_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_RivalsHouse_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_ProfessorOaksLab_Frlg/scripts.inc"
+	.include "data/maps/PalletTown_FarmersHouse_Frlg/scripts.inc"
+	.include "data/maps/Pallettown_Cafe_Frlg/scripts.inc"
 	.include "data/maps/ViridianCity_House_Frlg/scripts.inc"
 	.include "data/maps/ViridianCity_Gym_Frlg/scripts.inc"
 	.include "data/maps/ViridianCity_School_Frlg/scripts.inc"
@@ -1738,5 +1740,6 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 
-	.include "data/maps/PalletTown_FarmersHouse_Frlg/scripts.inc"
 	.include "data/maps/PalletTown_FarmersHouse_Frlg/text.inc"
+
+	.include "data/maps/PalletTown_Cafe_Frlg/text.inc"

@@ -175,6 +175,13 @@
       "elevation": 0,
       "dest_map": "MAP_PALLET_TOWN_FARMERS_HOUSE_FRLG",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 5,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_PALLET_TOWN_CAFE_FRLG",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
