@@ -100,6 +100,11 @@ static bool32 IsFieldMoveUnlocked_SweetScent(void)
     return TRUE;
 }
 
+static bool32 IsFieldMoveUnlocked_Headbutt(void)
+{
+    return TRUE;
+}
+
 #if OW_DEFOG_FIELD_MOVE == TRUE
 static bool32 IsFieldMoveUnlocked_Defog(void)
 {
@@ -220,6 +225,15 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .moveID = MOVE_SWEET_SCENT,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
+
+    [FIELD_MOVE_HEADBUTT] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Headbutt,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Headbutt,
+        .moveID = MOVE_HEADBUTT,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+    
 #if OW_ROCK_CLIMB_FIELD_MOVE == TRUE
     [FIELD_MOVE_ROCK_CLIMB] =
     {
