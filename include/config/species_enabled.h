@@ -262,7 +262,7 @@
 #define P_FAMILY_CHIMCHAR                FALSE
 #define P_FAMILY_PIPLUP                  FALSE
 #define P_FAMILY_STARLY                  FALSE
-#define P_FAMILY_BIDOOF                  FALSE
+#define P_FAMILY_BIDOOF                  P_GEN_4_POKEMON
 #define P_FAMILY_KRICKETOT               FALSE
 #define P_FAMILY_SHINX                   P_GEN_4_POKEMON
 #define P_FAMILY_CRANIDOS                FALSE
@@ -537,7 +537,7 @@
 #define P_FAMILY_NYMBLE                  P_GEN_9_POKEMON
 #define P_FAMILY_PAWMI                   FALSE
 #define P_FAMILY_TANDEMAUS               FALSE
-#define P_FAMILY_FIDOUGH                 P_GEN_9_POKEMON
+#define P_FAMILY_FIDOUGH                 FALSE
 #define P_FAMILY_SMOLIV                  FALSE
 #define P_FAMILY_SQUAWKABILLY            FALSE
 #define P_FAMILY_NACLI                   P_GEN_9_POKEMON
