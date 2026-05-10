@@ -8,7 +8,6 @@ EventScript_CutTree::
     checkfieldmove FIELD_MOVE_CUT
     copyvar VAR_0x8004, VAR_RESULT
     goto_if_eq VAR_0x8004, PARTY_SIZE, EventScript_CheckTreeCantCut
-    goto_if_eq VAR_0x8004, PARTY_SIZE + 1, EventScript_CutTreeWithItem
 
     @ --- A Pokémon that can learn the move was found ---
     bufferpartymonnick STR_VAR_1, VAR_0x8004
@@ -80,7 +79,6 @@ EventScript_RockSmash::
     checkfieldmove FIELD_MOVE_ROCK_SMASH
     copyvar VAR_0x8004, VAR_RESULT
     goto_if_eq VAR_0x8004, PARTY_SIZE, EventScript_CantSmashRock
-    goto_if_eq VAR_0x8004, PARTY_SIZE + 1, EventScript_RockSmashWithItem
 
     @ --- Pokémon with learnable move was found ---
     bufferpartymonnick STR_VAR_1, VAR_0x8004
@@ -156,7 +154,6 @@ EventScript_StrengthBoulder::
     checkfieldmove FIELD_MOVE_STRENGTH
     copyvar VAR_0x8004, VAR_RESULT
     goto_if_eq VAR_0x8004, PARTY_SIZE, EventScript_CantStrength
-    goto_if_eq VAR_0x8004, PARTY_SIZE + 1, EventScript_StrengthWithItem
 
     @ --- Pokémon with learnable move was found ---
     bufferpartymonnick STR_VAR_1, VAR_0x8004
@@ -222,7 +219,6 @@ EventScript_UseWaterfall::
     checkfieldmove FIELD_MOVE_WATERFALL
     copyvar VAR_0x8004, VAR_RESULT
     goto_if_eq VAR_0x8004, PARTY_SIZE, EventScript_CantWaterfall
-    goto_if_eq VAR_0x8004, PARTY_SIZE + 1, EventScript_UseWaterfallWithItem
 
     @ --- Pokémon with learnable move was found ---
     bufferpartymonnick STR_VAR_1, VAR_0x8004
@@ -272,7 +268,6 @@ EventScript_UseDive::
     checkfieldmove FIELD_MOVE_DIVE
     copyvar VAR_0x8004, VAR_RESULT
     goto_if_eq VAR_0x8004, PARTY_SIZE, EventScript_CantDive
-    goto_if_eq VAR_0x8004, PARTY_SIZE + 1, EventScript_UseDiveWithItem
 
     @ --- Pokémon with learnable move was found ---
     bufferpartymonnick STR_VAR_1, VAR_0x8004
@@ -302,7 +297,6 @@ EventScript_UseDiveUnderwater::
     checkfieldmove FIELD_MOVE_DIVE
     copyvar VAR_0x8004, VAR_RESULT
     goto_if_eq VAR_0x8004, PARTY_SIZE, EventScript_CantSurface
-    goto_if_eq VAR_0x8004, PARTY_SIZE + 1, EventScript_UseSurfaceWithItem
 
     @ --- Pokémon with learnable move was found ---
     bufferpartymonnick STR_VAR_1, VAR_0x8004
