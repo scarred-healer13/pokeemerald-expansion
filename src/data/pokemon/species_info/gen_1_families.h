@@ -11006,94 +11006,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_FARFETCHD] =
     {
         .baseHP        = 52,
-        .baseAttack    = P_UPDATED_STATS >= GEN_7 ? 90 : 65,
-        .baseDefense   = 55,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 58,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 62 : 58,
-        .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
-        .catchRate = 45,
-    #if P_UPDATED_EXP_YIELDS >= GEN_7
-        .expYield = 132,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_5
-        .expYield = 123,
-    #else
-        .expYield = 94,
-    #endif
-        .evYield_Attack = 1,
-        .itemRare = ITEM_LEEK,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_FIELD),
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_INNER_FOCUS, ABILITY_DEFIANT },
-        .bodyColor = BODY_COLOR_BROWN,
-        .noFlip = TRUE,
-        .speciesName = _("Farfetch'd"),
-        .cryId = CRY_FARFETCHD,
-        .natDexNum = NATIONAL_DEX_FARFETCHD,
-        .categoryName = _("Wild Duck"),
-        .height = 8,
-        .weight = 150,
-        .description = COMPOUND_STRING(
-            "It is always seen with a stick from a plant.\n"
-            "Apparently, there are good sticks and bad\n"
-            "sticks. This Pokémon occasionally fights\n"
-            "with others over choice sticks."),
-        .pokemonScale = 330,
-        .pokemonOffset = 2,
-        .trainerScale = 293,
-        .trainerOffset = 2,
-        .frontPic = gMonFrontPic_Farfetchd,
-        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(48, 56),
-        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 7,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 5),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 5),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 5),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 5),
-        ),
-        .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
-        .backPic = gMonBackPic_Farfetchd,
-        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(64, 48),
-        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 9,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_Farfetchd,
-        .shinyPalette = gMonShinyPalette_Farfetchd,
-        .iconSprite = gMonIcon_Farfetchd,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-3, 5, SHADOW_SIZE_M)
-        FOOTPRINT(Farfetchd)
-        OVERWORLD(
-            sPicTable_Farfetchd,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_NONE,
-            sAnimTable_Following_Asym,
-            gOverworldPalette_Farfetchd,
-            gShinyOverworldPalette_Farfetchd
-        )
-        .isSkyBattleBanned = B_SKY_BATTLE_STRICT_ELIGIBILITY,
-        .levelUpLearnset = sFarfetchdLevelUpLearnset,
-        .teachableLearnset = sFarfetchdTeachableLearnset,
-        .eggMoveLearnset = sFarfetchdEggMoveLearnset,
-        .formSpeciesIdTable = sFarfetchdFormSpeciesIdTable,
-    },
-
-#if P_GALARIAN_FORMS
-    [SPECIES_FARFETCHD_GALAR] =
-    {
-        .baseHP        = 52,
         .baseAttack    = 95,
         .baseDefense   = 55,
         .baseSpeed     = 55,
@@ -11152,12 +11064,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             gOverworldPalette_FarfetchdGalar,
             gShinyOverworldPalette_FarfetchdGalar
         )
-        .isGalarianForm = TRUE,
-        .levelUpLearnset = sFarfetchdGalarLevelUpLearnset,
-        .teachableLearnset = sFarfetchdGalarTeachableLearnset,
-        .eggMoveLearnset = sFarfetchdGalarEggMoveLearnset,
-        .formSpeciesIdTable = sFarfetchdFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_BATTLE_END, 0, SPECIES_SIRFETCHD, CONDITIONS({IF_CRITICAL_HITS_GE, 3})}),
+        .levelUpLearnset = sFarfetchdLevelUpLearnset,
+        .teachableLearnset = sFarfetchdTeachableLearnset,
+        .eggMoveLearnset = sFarfetchdEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_SIRFETCHD}),
     },
 
     [SPECIES_SIRFETCHD] =
@@ -11224,7 +11134,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sSirfetchdLevelUpLearnset,
         .teachableLearnset = sSirfetchdTeachableLearnset,
     },
-#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_FARFETCHD
 
 #if P_FAMILY_DODUO

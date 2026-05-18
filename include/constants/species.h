@@ -1041,7 +1041,6 @@
 #define SPECIES_RAPIDASH_GALAR                          976
 #define SPECIES_SLOWPOKE_GALAR                          977
 #define SPECIES_SLOWBRO_GALAR                           978
-#define SPECIES_FARFETCHD_GALAR                         979
 #define SPECIES_WEEZING_GALAR                           980
 #define SPECIES_MR_MIME_GALAR                           981
 #define SPECIES_ARTICUNO_GALAR                          982

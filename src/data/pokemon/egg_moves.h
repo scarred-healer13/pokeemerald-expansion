@@ -747,28 +747,6 @@ static const u16 sSlowpokeGalarEggMoveLearnset[] = {
 
 #if P_FAMILY_FARFETCHD
 static const u16 sFarfetchdEggMoveLearnset[] = {
-    MOVE_STEEL_WING,
-    MOVE_FORESIGHT,
-    MOVE_MIRROR_MOVE,
-    MOVE_GUST,
-    MOVE_QUICK_ATTACK,
-    MOVE_FLAIL,
-    MOVE_FEATHER_DANCE,
-    MOVE_CURSE,
-    MOVE_COVET,
-    MOVE_MUD_SLAP,
-    MOVE_NIGHT_SLASH,
-    MOVE_LEAF_BLADE,
-    MOVE_REVENGE,
-    MOVE_ROOST,
-    MOVE_TRUMP_CARD,
-    MOVE_SIMPLE_BEAM,
-    MOVE_FIRST_IMPRESSION,
-    MOVE_FINAL_GAMBIT,
-    MOVE_UNAVAILABLE,
-};
-#if P_GALARIAN_FORMS
-static const u16 sFarfetchdGalarEggMoveLearnset[] = {
     MOVE_COUNTER,
     MOVE_QUICK_ATTACK,
     MOVE_FLAIL,
@@ -782,7 +760,6 @@ static const u16 sFarfetchdGalarEggMoveLearnset[] = {
     MOVE_SKY_ATTACK,
     MOVE_UNAVAILABLE,
 };
-#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_FARFETCHD
 
 #if P_FAMILY_DODUO

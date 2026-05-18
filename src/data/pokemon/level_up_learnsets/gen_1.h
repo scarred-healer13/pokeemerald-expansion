@@ -1621,18 +1621,6 @@ static const struct LevelUpMove sMagnezoneLevelUpLearnset[] = {
 static const struct LevelUpMove sFarfetchdLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
-    LEVEL_UP_MOVE( 7, MOVE_LEER),
-    LEVEL_UP_MOVE(15, MOVE_FURY_ATTACK),
-    LEVEL_UP_MOVE(23, MOVE_SWORDS_DANCE),
-    LEVEL_UP_MOVE(31, MOVE_AGILITY),
-    LEVEL_UP_MOVE(39, MOVE_SLASH),
-    LEVEL_UP_END
-};
-
-#if P_GALARIAN_FORMS
-static const struct LevelUpMove sFarfetchdGalarLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_PECK),
-    LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 5, MOVE_LEER),
     LEVEL_UP_MOVE(10, MOVE_FURY_CUTTER),
     LEVEL_UP_MOVE(15, MOVE_ROCK_SMASH),

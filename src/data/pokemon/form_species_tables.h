@@ -347,16 +347,6 @@ static const u16 sSlowkingFormSpeciesIdTable[] = {
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_SLOWPOKE
 
-#if P_FAMILY_FARFETCHD
-static const u16 sFarfetchdFormSpeciesIdTable[] = {
-    SPECIES_FARFETCHD,
-#if P_GALARIAN_FORMS
-    SPECIES_FARFETCHD_GALAR,
-#endif
-    FORM_SPECIES_END,
-};
-#endif //P_FAMILY_FARFETCHD
-
 #if P_FAMILY_GRIMER
 static const u16 sGrimerFormSpeciesIdTable[] = {
     SPECIES_GRIMER,
