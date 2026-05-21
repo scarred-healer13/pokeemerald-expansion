@@ -209,6 +209,7 @@ flag, or save game options.
 #define GUARD_ROTOM_START_MENU_H
 
 #include "global.h"
+#include "comfy_anim.h"
 
 enum RotomPhone_Colours
 {
