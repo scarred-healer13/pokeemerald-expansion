@@ -21,12 +21,12 @@
 
 // Stat settings
 #define B_BADGE_BOOST               GEN_LATEST // In Gen4+, Gym Badges no longer boost a Pokémon's stats. (Setting this to GEN_2 does not include the additional boost to the type matching the Gym the Badge is from.)
-#define B_FRIENDSHIP_BOOST          FALSE      // In LGPE only, all stats except HP are boosted by up to 10% depending on on friendship. Unlike B_BADGE_BOOST, these boosts are accounted for when calculating base stats.
+#define B_FRIENDSHIP_BOOST          TRUE       // In LGPE only, all stats except HP are boosted by up to 10% depending on on friendship. Unlike B_BADGE_BOOST, these boosts are accounted for when calculating base stats.
 #define B_MAX_LEVEL_EV_GAINS        GEN_LATEST // In Gen5+, level 100 Pokémon can obtain Effort Values from battles.
 #define B_RECALCULATE_STATS         GEN_LATEST // In Gen5+, the stats of Pokémon that participate in battle are recalculated at the end of battle, rather than upon level up or being deposited in the PC.
 
 // Damage settings
-#define B_BURN_DAMAGE               GEN_LATEST // In Gen1 and Gen7+, burn damage is 1/16 of max HP instead of 1/8. This also applies to Frostbite.
+#define B_BURN_DAMAGE               GEN_4      // In Gen1 and Gen7+, burn damage is 1/16 of max HP instead of 1/8. This also applies to Frostbite.
 #define B_BURN_FACADE_DMG           GEN_LATEST // In Gen6+, burn's Attack halving effect no longer applies to Facade.
 #define B_BINDING_DAMAGE            GEN_LATEST // In Gen6+, binding damage is 1/8 of max HP instead of 1/16. If the user is holding a Binding Band, it is 1/6 instead of 1/8.
 #define B_PSYWAVE_DMG               GEN_LATEST // Psywave's damage formula. See DoFixedDamageMoveCalc for details.
@@ -36,7 +36,7 @@
 #define B_KNOCK_OFF_DMG             GEN_LATEST // In Gen6+, Knock Off deals 50% more damage if the target is holding an item that can be knocked off.
 #define B_SPORT_DMG_REDUCTION       GEN_LATEST // In Gen5+, Water/Mud Sport reduce Fire-/Electric-type damage by 67% instead of 50%.
 #define B_EXPLOSION_DEFENSE         GEN_LATEST // In Gen5+, Self-Destruct and Explosion no longer halve the targets' Defense.
-#define B_PARENTAL_BOND_DMG         GEN_LATEST // In Gen7+, Parental Bond's second hit does 25% of the initial hit's damage instead of 50%.
+#define B_PARENTAL_BOND_DMG         GEN_6      // In Gen7+, Parental Bond's second hit does 25% of the initial hit's damage instead of 50%.
 #define B_MULTIPLE_TARGETS_DMG      GEN_LATEST // In Gen4+, damage dealt by moves that hit multiple targets at once is reduced to 75%. Previously, it was 50%, unless the move hit the entire field, in which case there was no reduction.
 #define B_STRUGGLE_RECOIL           GEN_LATEST // In Gen4+, Struggle's recoil is 1/4 of the user's max HP. In Gen2-3, it's 1/4 of the damage dealt, and in Gen1, 1/2 of it.
 #define B_RETURN_FRUSTRATION_DMG    GEN_LATEST // In Gen3+, Return and Frustration deal at least 1 damage. In Gen2, they deal none at the friendship value that gives them 0 power.
@@ -208,7 +208,7 @@
 #define B_TRANSISTOR_BOOST              GEN_LATEST // In Gen9+, Transistor increases the power of Electric-type moves by 1.3x instead of 1.5x.
 #define B_ILLUMINATE_EFFECT             GEN_LATEST // In Gen9+, Illuminate prevents accuracy from being lowered and ignores the target's evasion. Previously, it had no in-battle effect.
 #define B_WEAK_ARMOR_SPEED              GEN_LATEST // In Gen7+, when hit by a physical move, Weak Armor raises Speed by 2 stages instead of 1.
-#define B_PROTEAN_LIBERO                GEN_LATEST // In Gen9+, Protean and Libero trigger only once per Battle.
+#define B_PROTEAN_LIBERO                GEN_8      // In Gen9+, Protean and Libero trigger only once per Battle.
 #define B_INTREPID_SWORD                GEN_LATEST // In Gen9+, Intrepid Sword triggers only once per battle.
 #define B_DAUNTLESS_SHIELD              GEN_LATEST // In Gen9+, Dauntless Shield triggers only once per battle.
 #define B_DISGUISE_HP_LOSS              GEN_LATEST // In Gen8+, when a disguised Mimikyu's Disguise is busted, upon changing to its Busted Form, it loses 1/8 of its max HP.
@@ -390,10 +390,10 @@
 #define B_TRAINER_CLASS_POKE_BALLS      GEN_LATEST // In Gen7+, Trainers will use certain kinds of Poké Balls depending on their Trainer class.
 #define B_TRAINER_MON_RANDOM_ABILITY    0          // If this is set to 0, trainers mons with no set ability only use the first ability of a mon. If set to 1 it will roll a random non-hidden ability. If set to 2, it will roll any ability (including hidden ability) with equal chance
 #define B_OBEDIENCE_MECHANICS           GEN_LATEST // In PLA onwards (GEN_8 here), obedience restrictions also apply to non-outsider Pokémon, albeit based on their met level rather than their current level.
-#define B_USE_FROSTBITE                 FALSE      // In PLA, Frostbite replaces Freeze. Enabling this flag does the same here. Moves can still be cherry-picked to either Freeze or Frostbite. Freeze-Dry, Secret Power & Tri Attack depend on this config.
+#define B_USE_FROSTBITE                 TRUE       // In PLA, Frostbite replaces Freeze. Enabling this flag does the same here. Moves can still be cherry-picked to either Freeze or Frostbite. Freeze-Dry, Secret Power & Tri Attack depend on this config.
 #define B_TOXIC_REVERSAL                GEN_LATEST // In Gen5+, bad poison will change to regular poison at the end of battles.
 #define B_TRY_CATCH_TRAINER_BALL        GEN_LATEST // In Gen4+, trying to catch a Trainer's Pokémon no longers consume the Poké Ball.
-#define B_SLEEP_CLAUSE                  FALSE      // Enables Sleep Clause all the time in every case, overriding B_FLAG_SLEEP_CLAUSE. Use that for modularity.
+#define B_SLEEP_CLAUSE                  TRUE       // Enables Sleep Clause all the time in every case, overriding B_FLAG_SLEEP_CLAUSE. Use that for modularity.
 #define B_PARTNER_MONS_MARKED_SEEN      FALSE      // If set to TRUE, if your Double Battle partner sends out a Pokémon you haven't encountered yet, it will be marked as SEEN in your Pokédex.
 #define B_MULTI_HALF_TEAMS              FALSE      // If TRUE, trainers will be capped at 3 Pokémon each when there are 2 trainers on one side in a battle. If FALSE, per-battle capping may still be set using `Multi Party: Half` in `trainers.party`
 #define B_TERA_ORB_ALWAYS_CHARGED       FALSE      // If TRUE, causes the Tera Orb to always be charged all the time in every case, overriding B_FLAG_TERA_ORB_CHARGED. Use that for modularity.
