@@ -1520,7 +1520,7 @@
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0 // Set after talking to NPC blocking Safari Zone entrance/exit once.
 #define FLAG_RECEIVED_WAILMER_PAIL           0
 #define FLAG_RECEIVED_POKEBLOCK_CASE         0
-#define FLAG_RECEIVED_SECRET_POWER           0
+#define FLAG_RECEIVED_SUDDEN_CHILL           0 // Former flag for Secret Power TM
 #define FLAG_MET_TEAM_AQUA_HARBOR            0
 #define FLAG_TV_EXPLAINED                    0
 #define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0
@@ -1531,7 +1531,7 @@
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0
 #define FLAG_RECEIVED_HM_STRENGTH            0
-#define FLAG_RECEIVED_HM_ROCK_SMASH          0
+#define FLAG_RECEIVED_HM_HEADBUTT            0 // Former flag for Rock Smash HM
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0 // Set after defeating Flannery, so the player can't white out from poison before receiving Go Goggles
 #define FLAG_RECEIVED_HM_FLASH               0
 #define FLAG_RECEIVED_HM_FLY                 0
@@ -1549,7 +1549,7 @@
 #define FLAG_LANDMARK_MIRAGE_TOWER           0
 #define FLAG_RECEIVED_TM_BRICK_BREAK         0
 #define FLAG_RECEIVED_HM_SURF                0
-#define FLAG_RECEIVED_HM_DIVE                0
+#define FLAG_UNUSED_0x7B                     0 // Former flag for Dive HM
 #define FLAG_REGISTER_RIVAL_POKENAV          0
 #define FLAG_DEFEATED_RIVAL_ROUTE_104        0
 #define FLAG_DEFEATED_WALLY_VICTORY_ROAD     0
@@ -1687,12 +1687,12 @@
 #define FLAG_RECEIVED_OLD_ROD                0
 #define FLAG_RECEIVED_COIN_CASE              0
 #define FLAG_RETURNED_RED_OR_BLUE_ORB        0
-#define FLAG_RECEIVED_TM_SNATCH              0
+#define FLAG_RECEIVED_TM_DAZZLING_GLEAM      0 // Former flag for Snatch TM
 #define FLAG_RECEIVED_TM_DIG                 0
 #define FLAG_RECEIVED_TM_BULLET_SEED         0
 #define FLAG_ENTERED_ELITE_FOUR              0
 #define FLAG_RECEIVED_TM_HIDDEN_POWER        0
-#define FLAG_RECEIVED_TM_TORMENT             0
+#define FLAG_RECEIVED_TM_THUNDER_WAVE        0 // Former flag for Torment TM
 #define FLAG_RECEIVED_LAVARIDGE_EGG          0
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0
@@ -1739,7 +1739,7 @@
 #define FLAG_MET_MAXIE_SOOTOPOLIS            0
 #define FLAG_MET_SCOTT_RUSTBORO              0
 #define FLAG_WALLACE_GOES_TO_SKY_PILLAR      0 // Set after speaking to Wallace within the Cave of Origin.
-#define FLAG_RECEIVED_HM_WATERFALL           0
+#define FLAG_RECEIVED_HM_ROCK_CLIMB          0 // Former flag for Waterfall HM
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0
@@ -2374,7 +2374,7 @@
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR                       0
 #define FLAG_ITEM_AQUA_HIDEOUT_B2F_NEST_BALL                        0
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION                       0
-#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP                    0
+#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SWORDS_DANCE                  0 // Former flag for Skill Swap TM
 #define FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL                           0
 #define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0
