@@ -3,6 +3,7 @@
   "name": "Route1_Frlg",
   "layout": "LAYOUT_ROUTE1",
   "music": "MUS_RG_ROUTE1",
+  "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_1",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -11,6 +12,7 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
@@ -26,6 +28,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CLERK",
       "x": 6,
       "y": 28,
@@ -39,6 +42,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 19,
       "y": 16,
@@ -52,8 +56,12 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -63,7 +71,5 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route1_EventScript_RouteSign"
     }
-  ],
-  "floor_number": 0,
-  "region": "REGION_KANTO"
+  ]
 }
