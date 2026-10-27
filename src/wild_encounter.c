@@ -385,6 +385,7 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
         break;
     }
     return wildMonIndex;
+}
 
 u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
 {
@@ -491,9 +492,6 @@ enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area
     case WILD_AREA_FISHING:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo;
         break;
-    case WILD_AREA_HEADBUTT:
-        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].headbuttMonsInfo;
-        break;
     case WILD_AREA_HIDDEN:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
         break;
@@ -585,9 +583,6 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
         break;
     case WILD_AREA_ROCKS:
         wildMonIndex = ChooseWildMonIndex_Rocks();
-        break;
-    case WILD_AREA_HEADBUTT:
-        wildMonIndex = ChooseWildMonIndex_Headbutt();
         break;
     default:
     case WILD_AREA_FISHING:
@@ -1228,49 +1223,6 @@ bool8 TryDoDoubleWildBattle(void)
     else if (RandomPercentage(RNG_NONE, WE_DOUBLE_WILD_CHANCE))
         return TRUE;
     return FALSE;
-}
-
-// ow-headbutt-encounters
-void HeadbuttWildEncounter(void)
-{
-    u32 headerId = GetCurrentMapWildMonHeaderId();
-    enum TimeOfDay timeOfDay;
-
-    if (headerId != HEADER_NONE)
-    {
-        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_HEADBUTT);
-
-        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].headbuttMonsInfo;
-
-        if (wildPokemonInfo == NULL)
-        {
-            gSpecialVar_Result = FALSE;
-        }
-        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
-         && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HEADBUTT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
-        {
-            if (TryDoDoubleWildBattle())
-            {
-                struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
-                TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HEADBUTT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
-                gParties[B_TRAINER_OPPONENT_A][1] = mon1;
-                BattleSetup_StartDoubleWildBattle();
-                gSpecialVar_Result = TRUE;
-            }
-            else {
-                BattleSetup_StartWildBattle();
-                gSpecialVar_Result = TRUE;
-            }
-        }
-        else
-        {
-            gSpecialVar_Result = FALSE;
-        }
-    }
-    else
-    {
-        gSpecialVar_Result = FALSE;
-    }
 }
 
 u32 ChooseHiddenMonIndex(void)
