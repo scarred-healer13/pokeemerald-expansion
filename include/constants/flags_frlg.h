@@ -2344,7 +2344,7 @@
 #define FLAG_ITEM_RUSTBORO_CITY_X_DEFEND                            0
 #define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_WATERFALL                   0
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL                   0
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL                      0
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE                     0
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0
@@ -2412,7 +2412,7 @@
 #define FLAG_ITEM_ROUTE_123_ELIXIR                                  0
 #define FLAG_ITEM_NEW_MAUVILLE_THUNDER_STONE                        0
 #define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0
-#define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_SNOWSCAPE                  0
+#define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_HAIL                       0
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0
 #define FLAG_ITEM_ROUTE_103_GUARD_SPEC                              0
 #define FLAG_ITEM_ROUTE_104_X_ACCURACY                              0
