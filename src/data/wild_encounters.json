@@ -81,16 +81,6 @@
               9
             ]
           }
-        },
-        {
-          "type": "headbutt_mons",
-          "encounter_rates": [
-            20,
-            20,
-            20,
-            20,
-            20
-          ]
         }
       ],
       "encounters": [

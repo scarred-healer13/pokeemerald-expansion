@@ -12,7 +12,6 @@ enum WildPokemonArea {
     WILD_AREA_WATER,
     WILD_AREA_ROCKS,
     WILD_AREA_FISHING,
-    WILD_AREA_HEADBUTT,
     WILD_AREA_HIDDEN
 };
 
@@ -35,7 +34,6 @@ struct WildEncounterTypes
     const struct WildPokemonInfo *waterMonsInfo;
     const struct WildPokemonInfo *rockSmashMonsInfo;
     const struct WildPokemonInfo *fishingMonsInfo;
-    const struct WildPokemonInfo *headbuttMonsInfo;
     const struct WildPokemonInfo *hiddenMonsInfo;
 };
 
@@ -75,7 +73,6 @@ bool8 CheckFeebasAtCoords(s16 x, s16 y);
 u32 ChooseWildMonIndex_Land(void);
 u32 ChooseWildMonIndex_Water(void);
 u32 ChooseWildMonIndex_Rocks(void);
-u32 ChoosewildMonIndex_Headbutt(void);
 u32 ChooseHiddenMonIndex(void);
 bool32 MapHasNoEncounterData(void);
 enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area);
