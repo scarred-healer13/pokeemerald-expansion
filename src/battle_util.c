@@ -2358,6 +2358,9 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
     case ABILITY_WELL_BAKED_BODY:
         if (ctx->moveType == TYPE_FIRE)
             battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_DEF, 2);
+    case ABILITY_WATER_COMPACTION:
+        if (ctx->moveType == TYPE_WATER)
+            battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_DEF, 1);
         break;
     case ABILITY_WIND_RIDER:
         if (IsWindMove(ctx->move))
@@ -2365,7 +2368,7 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
         break;
     case ABILITY_FLASH_FIRE:
         if (ctx->moveType == TYPE_FIRE && (B_FLASH_FIRE_FROZEN >= GEN_5 || !(gBattleMons[ctx->battlerDef].status1 & STATUS1_FREEZE)))
-            battleScript = AbsorbedByFlashFire(ctx);
+            battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_SPATK, 1);
         break;
     case ABILITY_SOUNDPROOF:
         if (IsSoundMove(ctx->move))
@@ -3879,18 +3882,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             {
                 gEffectBattler = gBattlerAbility = battler;
                 SetStatChange(battler, STAT_SPEED, 1);
-                BattleScriptCall(BattleScript_AbilityStatChange);
-                effect++;
-            }
-            break;
-        case ABILITY_WATER_COMPACTION:
-            if (IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
-             && IsBattlerAlive(battler)
-             && moveType == TYPE_WATER
-             && CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
-            {
-                gEffectBattler = gBattlerAbility = battler;
-                SetStatChange(battler, STAT_DEF, 1);
                 BattleScriptCall(BattleScript_AbilityStatChange);
                 effect++;
             }
@@ -7056,10 +7047,32 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
                 RecordAbilityBattle(battlerDef, ABILITY_PURIFYING_SALT);
         }
         break;
+    case ABILITY_DARK_AURA:
+        if (moveType == TYPE_FAIRY || moveType == TYPE_FIGHTING)
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_DARK_AURA);
+        }
+        break;
+    case ABILITY_FAIRY_AURA:
+        if (moveType == TYPE_BUG || moveType == TYPE_POISON)
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_FAIRY_AURA);
+        }
+        break;
+    case ABILITY_PASTEL_VEIL:
+        if (moveType == TYPE_POISON)
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_PASTEL_VEIL);
+        }
     default:
         break;
     }
-
     // ally's abilities
     switch (ctx->abilities[GetPartnerBattler(battlerAtk)])
     {
@@ -7526,7 +7539,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
     case ABILITY_PRISM_ARMOR:
         if (ctx->typeEffectivenessModifier >= UQ_4_12(2.0))
         {
-            modifier = UQ_4_12(0.75);
+            modifier = UQ_4_12(0.5);
             recordAbility = TRUE;
         }
         break;
