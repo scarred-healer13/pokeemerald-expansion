@@ -1344,7 +1344,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BULLETPROOF] =
     {
         .name = _("Bulletproof"),
-        .description = COMPOUND_STRING("Blocks ball and bomb moves."),
+        .description = COMPOUND_STRING("Blocks projectile moves."),
         .breakable = TRUE,
         .aiRating = 7,
     },
@@ -1401,7 +1401,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MEGA_LAUNCHER] =
     {
         .name = _("Mega Launcher"),
-        .description = COMPOUND_STRING("Powers up pulse moves."),
+        .description = COMPOUND_STRING("Ups projectile moves."),
         .aiRating = 7,
     },
 
@@ -1524,7 +1524,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WATER_COMPACTION] =
     {
         .name = _("Water Compaction"),
-        .description = COMPOUND_STRING("Ups Defense if hit by Water."),
+        .description = COMPOUND_STRING("Water boosts Defense."),
         .aiRating = 4,
     },
 
@@ -1939,7 +1939,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_PUNK_ROCK] =
     {
-        .name = _("Punk Rock"),
+        .name = _("Bard"),
         .description = COMPOUND_STRING("Boosts and resists sound."),
         .aiRating = 2,
         .breakable = TRUE,

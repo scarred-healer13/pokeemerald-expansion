@@ -3512,6 +3512,7 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
                 break;
             case ABILITY_DRY_SKIN:
             case ABILITY_WATER_ABSORB:
+            case ABILITY_WATER_COMPACTION:
             case ABILITY_STORM_DRAIN:
                 if (moveType == TYPE_WATER)
                 {
@@ -3532,25 +3533,6 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
                     else
                     {
                         RETURN_SCORE_MINUS(10);
-                    }
-                }
-                else
-                {
-                    isMoveAffectedByPartnerAbility = FALSE;
-                }
-                break;
-            case ABILITY_WATER_COMPACTION:
-                if (moveType == TYPE_WATER && isFriendlyFireOK
-                    && ShouldTriggerAbility(battlerAtk, battlerAtkPartner, atkPartnerAbility))
-                {
-                    if (moveTarget == TARGET_FOES_AND_ALLY)
-                    {
-                        ADJUST_SCORE(DECENT_EFFECT);
-                    }
-
-                    if (GetMoveStrikeCount(move) > 1 && moveTarget != TARGET_SMART)
-                    {
-                        ADJUST_SCORE(DECENT_EFFECT);
                     }
                 }
                 else

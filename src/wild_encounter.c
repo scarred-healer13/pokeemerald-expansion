@@ -370,7 +370,7 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
 }
 
 // ow-headbutt-encounters
-// HEADBUTT_WILD_COUNT
+// NUM_HEADBUTT_MONS_ENCOUNTER_SLOTS
 u32 ChooseWildMonIndex_Headbutt(void)
 {
     u32 wildMonIndex = 0;
